@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UILabel_UIButtom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdV-O1-ArJ">
+                                <rect key="frame" x="110.5" y="420" width="193" height="66"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" Отчистить"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djx-bs-VbR">
+                                <rect key="frame" x="166" y="538" width="82" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Кнопка 2"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJi-Hb-ftj">
+                                <rect key="frame" x="186.5" y="69" width="41.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilb-TB-8pl">
+                                <rect key="frame" x="166" y="494" width="82" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="uLY-tG-FUH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Кнопка 1"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ilb-TB-8pl" firstAttribute="height" secondItem="JdV-O1-ArJ" secondAttribute="height" multiplier="0.469697" id="1mo-9i-6ee"/>
+                            <constraint firstItem="hJi-Hb-ftj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2Hb-ht-pfP"/>
+                            <constraint firstItem="djx-bs-VbR" firstAttribute="width" secondItem="Ilb-TB-8pl" secondAttribute="width" id="4HY-ys-KFG"/>
+                            <constraint firstItem="JdV-O1-ArJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4q8-hC-fx5"/>
+                            <constraint firstItem="Ilb-TB-8pl" firstAttribute="width" secondItem="JdV-O1-ArJ" secondAttribute="width" multiplier="0.424051" id="5au-7o-7hW"/>
+                            <constraint firstItem="Ilb-TB-8pl" firstAttribute="centerX" secondItem="djx-bs-VbR" secondAttribute="centerX" id="AQB-GB-voO"/>
+                            <constraint firstItem="Ilb-TB-8pl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="Eep-h7-jd9"/>
+                            <constraint firstItem="Ilb-TB-8pl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KfA-4p-7GW"/>
+                            <constraint firstItem="Ilb-TB-8pl" firstAttribute="centerX" secondItem="JdV-O1-ArJ" secondAttribute="centerX" id="U7V-DW-EZu"/>
+                            <constraint firstItem="djx-bs-VbR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fMi-2E-6rM"/>
+                            <constraint firstItem="djx-bs-VbR" firstAttribute="height" secondItem="Ilb-TB-8pl" secondAttribute="height" id="i3t-ZJ-Miy"/>
+                            <constraint firstItem="Ilb-TB-8pl" firstAttribute="top" secondItem="JdV-O1-ArJ" secondAttribute="bottom" constant="8" symbolic="YES" id="khs-2t-cQi"/>
+                            <constraint firstItem="hJi-Hb-ftj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="mdt-gt-lzu"/>
+                            <constraint firstItem="JdV-O1-ArJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qAq-jH-xKu"/>
+                            <constraint firstItem="djx-bs-VbR" firstAttribute="top" secondItem="Ilb-TB-8pl" secondAttribute="bottom" constant="13" id="vmf-Kf-H3W"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="JdV-O1-ArJ" id="6RR-VY-RXv"/>
+                        <outlet property="label" destination="hJi-Hb-ftj" id="fBc-iQ-BET"/>
+                        <outletCollection property="actionButtons" destination="Ilb-TB-8pl" collectionClass="NSMutableArray" id="VAa-GC-4ga"/>
+                        <outletCollection property="actionButtons" destination="djx-bs-VbR" collectionClass="NSMutableArray" id="6gy-e1-ZgI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
