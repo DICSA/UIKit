@@ -11,18 +11,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         slider.value = 1
-        label.isHidden = true
+//        label.isHidden = true // делает его скрывающимся
         label.text = String(slider.value)
         label.font = label.font.withSize(25)
         label.textAlignment = .center
         label.numberOfLines = 2
         
-        segmentedControl.insertSegment(withTitle: "Third", at: 2, animated: true)
+        segmentedControl.insertSegment(withTitle: "GREN", at: 2, animated: true)
         
         slider.minimumValue = 0
         slider.maximumValue = 1
@@ -40,13 +41,13 @@ class ViewController: UIViewController {
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            label.text = "The first segment is selected"
+            label.text = "RED"
             label.textColor = .red
         case 1:
-            label.text = "The second segment is selected"
+            label.text = "BLUE"
             label.textColor = .blue
         case 2:
-            label.text = "The second segment is selected"
+            label.text = "GREEN"
             label.textColor = .green
         default:
             print("Something wrong")
@@ -58,6 +59,26 @@ class ViewController: UIViewController {
         
         let backgroundColor = self.view.backgroundColor
         self.view.backgroundColor = backgroundColor?.withAlphaComponent(CGFloat(sender.value))
+    }
+    
+    @IBAction func donePressed(_ sender: UIButton) {
+        label.text = textField.text
+        
+        guard textField.text?.isEmpty == false else {return}
+        
+        if let _ = Double(textField.text!) {
+            label.text = ""
+            let alert = UIAlertController(title: "Неверный формат", message: "Пожалуйста введите имя", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            print("Только буквы")
+        } else {
+            label.text = textField.text
+            textField.text = nil
+        }
+        
+
     }
 }
 

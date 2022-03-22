@@ -22,15 +22,15 @@
                                     <constraint firstAttribute="width" constant="193" id="0Vc-Zg-5xH"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="RED"/>
+                                    <segment title="BLUE"/>
                                 </segments>
                                 <connections>
                                     <action selector="choiseSegmented:" destination="BYZ-38-t0r" eventType="valueChanged" id="cPp-QR-mw5"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4B-TN-rBh">
-                                <rect key="frame" x="186.5" y="157" width="41.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4B-TN-rBh">
+                                <rect key="frame" x="186.5" y="157" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,23 +44,47 @@
                                     <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="2dI-3w-b8b"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kCK-eS-Fkx">
+                                <rect key="frame" x="111" y="292" width="194" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="eNR-Rh-me5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-u0-7dy">
+                                <rect key="frame" x="142" y="374" width="130" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="A2a-Cu-7XK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPV-0a-gdH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d4B-TN-rBh" firstAttribute="top" secondItem="SR9-OF-uSm" secondAttribute="bottom" constant="56" id="0bf-zu-b6O"/>
                             <constraint firstItem="d4B-TN-rBh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="25N-DK-QSh"/>
+                            <constraint firstItem="kCK-eS-Fkx" firstAttribute="top" secondItem="HDC-LQ-fIk" secondAttribute="bottom" constant="49" id="2I1-Bz-mKf"/>
                             <constraint firstItem="SR9-OF-uSm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3pa-jc-DsQ"/>
                             <constraint firstItem="HDC-LQ-fIk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="K0x-Dl-bPh"/>
+                            <constraint firstItem="kCK-eS-Fkx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TlR-nG-MdE"/>
                             <constraint firstItem="HDC-LQ-fIk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="fNL-gC-JfL"/>
                             <constraint firstItem="SR9-OF-uSm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="nvl-4r-z0K"/>
                             <constraint firstItem="HDC-LQ-fIk" firstAttribute="top" secondItem="d4B-TN-rBh" secondAttribute="bottom" constant="36" id="q7m-T8-iIl"/>
+                            <constraint firstItem="tEg-u0-7dy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xQD-R8-qgm"/>
+                            <constraint firstItem="tEg-u0-7dy" firstAttribute="top" secondItem="kCK-eS-Fkx" secondAttribute="bottom" constant="42" id="zLE-AR-SQM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="d4B-TN-rBh" id="KBI-5M-CCR"/>
                         <outlet property="segmentedControl" destination="SR9-OF-uSm" id="mfl-d3-1LT"/>
                         <outlet property="slider" destination="HDC-LQ-fIk" id="5oj-2Y-kHZ"/>
+                        <outlet property="textField" destination="kCK-eS-Fkx" id="W4m-pC-vHS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
