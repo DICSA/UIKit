@@ -35,6 +35,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HDC-LQ-fIk">
+                                <rect key="frame" x="109" y="214" width="198" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="zCv-rY-1MG"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="2dI-3w-b8b"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -42,12 +51,16 @@
                             <constraint firstItem="d4B-TN-rBh" firstAttribute="top" secondItem="SR9-OF-uSm" secondAttribute="bottom" constant="56" id="0bf-zu-b6O"/>
                             <constraint firstItem="d4B-TN-rBh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="25N-DK-QSh"/>
                             <constraint firstItem="SR9-OF-uSm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3pa-jc-DsQ"/>
+                            <constraint firstItem="HDC-LQ-fIk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="K0x-Dl-bPh"/>
+                            <constraint firstItem="HDC-LQ-fIk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="fNL-gC-JfL"/>
                             <constraint firstItem="SR9-OF-uSm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="nvl-4r-z0K"/>
+                            <constraint firstItem="HDC-LQ-fIk" firstAttribute="top" secondItem="d4B-TN-rBh" secondAttribute="bottom" constant="36" id="q7m-T8-iIl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="d4B-TN-rBh" id="KBI-5M-CCR"/>
                         <outlet property="segmentedControl" destination="SR9-OF-uSm" id="mfl-d3-1LT"/>
+                        <outlet property="slider" destination="HDC-LQ-fIk" id="5oj-2Y-kHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
