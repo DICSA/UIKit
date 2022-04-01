@@ -8,6 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var uiElements = ["UISegmentedControl", "UILabel", "UISlider", "UITextField", "UIButton", "UIDatePicker" ]
+    
+    var selectedElement: String?
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
@@ -37,9 +42,52 @@ class ViewController: UIViewController {
         
         datePicker.locale = Locale(identifier: "ru_RU")
         
+        choiceUiElement()
         
-        
+        createToolbar()
     }
+    func hideAllElements() {
+        segmentedControl.isHidden = true
+        label.isHidden = true
+        slider.isHidden = true
+        doneButton.isHidden = true
+        datePicker.isHidden = true
+    }
+    
+    
+    func choiceUiElement() {
+        let elementPicker = UIPickerView().self
+        elementPicker.delegate = self
+        
+        textField.inputView = elementPicker
+        
+        //костамизация
+        elementPicker.backgroundColor = .brown
+    }
+    
+    
+    func createToolbar() {
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+         
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(dismissKeyboard))
+        
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.isUserInteractionEnabled = true
+        
+        textField.inputAccessoryView = toolbar
+        
+        toolbar.tintColor = .white
+        toolbar.barTintColor = .brown
+    }
+    
+       @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
     
     @IBAction func choiseSegmented(_ sender: UISegmentedControl) {
         
@@ -109,4 +157,66 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1 //возвращает колличество барабанов которое мы будем использовать
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return uiElements.count //возвращает колличество элементов доступных в PickerView в данном случае мы ограничиваем колличеством элементов массива
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return uiElements[row] //данный метод позволяет отображать в каждой строке PickerView определенное значение в данном случае мы берем значение из uiElements подставляя элемент row мы убираем тот или иной элемент из массива
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedElement = uiElements[row] //позволяет работать с выбранным элементом
+        textField.text = selectedElement
+        
+        switch row {
+        case 0:
+            hideAllElements()
+            segmentedControl.isHidden = false
+        case 1:
+            hideAllElements()
+            label.isHidden = false
+        case 2:
+            hideAllElements()
+            slider.isHidden = false
+        case 3:
+            hideAllElements()
+        case 4:
+            hideAllElements()
+            doneButton.isHidden = false
+        case 5:
+            hideAllElements()
+            datePicker.isHidden = false
+        default:
+            hideAllElements()
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    viewForRow row: Int,
+                    forComponent component: Int,
+                    reusing view: UIView?) -> UIView {
+       
+        var pickerViewLabel = UILabel()
+        
+        if let currentLabel = view as? UILabel {
+            pickerViewLabel = currentLabel
+        } else {
+            pickerViewLabel = UILabel()
+        }
+        
+        pickerViewLabel.textColor = .white
+        pickerViewLabel.textAlignment = .center
+        pickerViewLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 23)
+        pickerViewLabel.text = uiElements[row]
+        
+        return pickerViewLabel
+    }
+    
+}
 
