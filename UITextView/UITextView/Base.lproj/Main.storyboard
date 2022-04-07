@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UITextView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2f6-32-NbK">
+                                <rect key="frame" x="19" y="157" width="376" height="612"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arp-Nf-YC3">
+                                <rect key="frame" x="19" y="87" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="FF3-6K-3ld">
+                                <rect key="frame" x="197" y="453" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-rw-C3s">
+                                <rect key="frame" x="19.5" y="157" width="375" height="4"/>
+                            </progressView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="DL2-it-iwV">
+                                <rect key="frame" x="300" y="117" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="rnX-M1-402"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="arp-Nf-YC3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="2bK-mw-Oko"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2f6-32-NbK" secondAttribute="bottom" constant="93" id="3Jo-tS-6iX"/>
+                            <constraint firstItem="arp-Nf-YC3" firstAttribute="leading" secondItem="2f6-32-NbK" secondAttribute="leading" id="3Qa-Qr-FV6"/>
+                            <constraint firstItem="FF3-6K-3ld" firstAttribute="centerY" secondItem="2f6-32-NbK" secondAttribute="centerY" id="6Gf-Th-AHy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="arp-Nf-YC3" secondAttribute="trailing" constant="384" id="6ez-Y9-5qf"/>
+                            <constraint firstItem="arp-Nf-YC3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="C1I-f7-YgC"/>
+                            <constraint firstItem="2f6-32-NbK" firstAttribute="top" secondItem="arp-Nf-YC3" secondAttribute="bottom" constant="49" id="Fuu-SR-3Gd"/>
+                            <constraint firstItem="Vcd-rw-C3s" firstAttribute="width" secondItem="2f6-32-NbK" secondAttribute="width" multiplier="0.99734" id="Tzx-64-Jp4"/>
+                            <constraint firstItem="Vcd-rw-C3s" firstAttribute="top" secondItem="2f6-32-NbK" secondAttribute="top" id="Zz0-MU-Sln"/>
+                            <constraint firstItem="2f6-32-NbK" firstAttribute="top" secondItem="DL2-it-iwV" secondAttribute="bottom" constant="8" symbolic="YES" id="afA-Mk-WVN"/>
+                            <constraint firstItem="2f6-32-NbK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dtA-ZF-t0g"/>
+                            <constraint firstItem="2f6-32-NbK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="hI7-dE-5Ws"/>
+                            <constraint firstItem="FF3-6K-3ld" firstAttribute="centerX" secondItem="2f6-32-NbK" secondAttribute="centerX" id="hRd-fs-h2s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2f6-32-NbK" secondAttribute="trailing" constant="19" id="liS-kT-Z41"/>
+                            <constraint firstItem="Vcd-rw-C3s" firstAttribute="centerX" secondItem="2f6-32-NbK" secondAttribute="centerX" id="q40-ge-wzG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DL2-it-iwV" secondAttribute="trailing" constant="20" id="wdA-ZZ-ERJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="FF3-6K-3ld" id="ayk-v4-GFR"/>
+                        <outlet property="countLabel" destination="arp-Nf-YC3" id="au7-q0-zyl"/>
+                        <outlet property="progressView" destination="Vcd-rw-C3s" id="gDL-Y1-Qkr"/>
+                        <outlet property="stepper" destination="DL2-it-iwV" id="aHy-DW-TTH"/>
+                        <outlet property="textView" destination="2f6-32-NbK" id="9Bz-Rs-FKi"/>
+                        <outlet property="textViewBottomConstraine" destination="3Jo-tS-6iX" id="Ag1-X0-Fez"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
